@@ -10,11 +10,16 @@ library(readxl)
 library(xlsx)
 ```
 
+```{r}
+manou_candy_data <- read_excel("manou-candy-data.xlsx")
+manou_candy_data
+```
+
 Viz 1
 
 ```{r, include=TRUE}
-plot(candy_data$sugarpercent~candy_data$winpercent,
-     data = candy_data,
+plot(manou_candy_data$sugarpercent~manou_candy_data$winpercent,
+     data = manou_candy_data,
      xlab = "Win Percent",
      ylab = "Sugar Percent",
      main = "Halloween Candy Popurlarity Compared to the Average Sugar Percent",
@@ -26,9 +31,9 @@ plot(candy_data$sugarpercent~candy_data$winpercent,
 Viz 2
 
 ```{r, include=TRUE}
-force(candy_data)
-plot(candy_data$winpercent~candy_data$sugarpercent,
-     data = candy_data,
+force(manou_candy_data)
+plot(manou_candy_data$winpercent~manou_candy_data$sugarpercent,
+     data = manou_candy_data,
      xlab = "Sugar Percent",
      ylab = "Win Percent",
      main = "Halloween Candy Popurlarity Compared to the Sugar Percent",
@@ -36,5 +41,4 @@ plot(candy_data$winpercent~candy_data$sugarpercent,
      col = "violetred",
      pch = 18)
 ```
-Sources:
-https://www.data-to-viz.com/graph/circularbarplot.html
+
