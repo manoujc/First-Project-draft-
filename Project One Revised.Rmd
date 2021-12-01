@@ -27,12 +27,10 @@ ggplot(manou_candy_data, aes(x = sugarpercent, y = winpercent)) +
 
 Visual 2
 ```{r, include=TRUE}
-ggplot(manou_candy_data, aes(x = averageprice, y = winpercent, fill = caramel)) +
-  geom_point(size = 2.5, shape =  16,) +
+ggplot(manou_candy_data, aes(x = averageprice, y = winpercent, fill = factor(caramel))) +
+  geom_point(size = 2.5, shape =  21,) +
   theme_minimal() +
   theme(legend.position = "bottom") +
-  ggtitle("Does the Average Price of Caramel Candies Affect Win Percent?") +
-  xlab("Average Price ") +
-  ylab("Win Percent")
+  labs(main = "Does the Average Price of Caramel Candies Affect Win Percent?",x = "Average Price", y = "Win Percent", fill = "Caramel Presence (0 = F, 1 = T)")
 ```
 
