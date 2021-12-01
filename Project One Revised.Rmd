@@ -1,0 +1,38 @@
+---
+title: "Visuals Second go round"
+author: "Manou (CPSC 292-01)"
+date: "11/29/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(readxl)
+library(xlsx)
+library(ggplot2)
+```
+
+```{r, include=TRUE}
+manou_candy_data <- read_excel("manou-candy-data.xlsx")
+manou_candy_data
+```
+
+Visual 1
+```{r, include=TRUE}
+ggplot(manou_candy_data, aes(x = sugarpercent, y = winpercent)) +
+  geom_point(size = 2.5, shape = 15, color = "blue4") +
+  labs(title = "Does Sugar Percent Affect Win Percent?",
+       x = "Sugar Percent",
+       y = "Win Percent")
+```
+
+Visual 2
+```{r, include=TRUE}
+ggplot(manou_candy_data, aes(x = averageprice, y = winpercent, fill = caramel)) +
+  geom_point(size = 2.5, shape =  16,) +
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  ggtitle("Does the Average Price of Caramel Candies Affect Win Percent?") +
+  xlab("Average Price ") +
+  ylab("Win Percent")
+```
+
